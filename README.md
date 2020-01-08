@@ -2,7 +2,7 @@
 The Persona API is a fake RESTful API that delivers made up data on a few endpoints. The data sits within a zip file and needs to be decompressed only on deployment. A crucial task is to find a way to do that in an elegant manner.
 
 ## Client Requirements
-We would like to see best practice developing the API, structuring your project and code, documentation and security. Your server will need to be able to ingest new data and we are expecting to see good use of design patterns where needed. The tasks that need to be completed can be seen below
+We would like to see best practice developing the API, structuring your project and code, documentation and security. Your server will need to be able to ingest new data and we are expecting to see good use of design patterns where needed. The tasks that need to be completed can be seen in the following sections.
 
 ### Core development
 Develop the web server with the following endpoints:
