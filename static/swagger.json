@@ -1,0 +1,242 @@
+
+{
+    "openapi": "3.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "Personas REST API app "
+    },
+  
+  
+  
+   "tags": [
+      {
+        "name": "Personas API",
+        "description": "Test API"
+      }
+    ],
+
+  
+    "components": {
+
+        "schemas": {
+
+            "Search": {
+                "type": "object",
+                "properties": {
+
+                    "id": {
+                        "type": "integer"
+               },
+                    "name": {
+                        "type": "string"
+               },
+                    "company": {
+                                "type": "string"
+               },
+                    "address": {
+                        "type": "string"
+               },
+                    "birthdate": {
+                        "type": "string"
+               },
+                    "blood_group": {
+                        "type": "string"
+               },
+
+                    "website": {
+                            "type": "string"
+                },
+                    "sex": {
+                        "type": "string"
+                },
+                    "current_location": {
+                        "type": "string"
+                },
+                    "residence": {
+                        "type": "string"
+                    },
+                    "ssn": {
+                        "type": "string"
+                },
+                    "mail": {
+                        "type": "string"
+                },
+                    "job": {
+                        "type": "string"
+                }
+              
+              
+            }
+          }
+        }
+      },
+ 
+ 
+      "paths" : {
+          "/search/{username}":{
+
+                "get":{
+                    "tags":["Personas API"],
+                    "summary": "Searches the data for the specific username",
+                    "parameters" : [{
+                        "name": "username",
+                        "in": "path",
+                        "required": "true",
+                        "description": "Profile username",
+                        "properties": {
+                            "type": "string",
+                            "minimum": "1"
+                        }
+
+                    }],
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Search"
+                                }
+                            }
+                        },      
+                    "responses": {
+                        "200": {
+                            "description": "OK",
+                            "schema": {
+                            "$ref": "#/components/schemas/Search"
+                            }
+                        },
+                        "404": {
+                            "description": "USERNAME NOT FOUND",
+                            "schema": {
+                            "$ref": "#/components/schemas/Search"
+                            }
+                    }
+                    
+
+          }
+        },
+
+
+          "delete":{
+            "tags":["Personas API"],
+            "summary": "Delete a person",
+            "parameters" : [{
+                "name": "username",
+                "in": "path",
+                "required": "true",
+                "description": "Profile username",
+                "properties": {
+                    "type": "string",
+                    "minimum": "1"
+                }
+
+            }],
+
+            "content": {
+                "application/json": {
+                    "schema": {
+                        "$ref": "#/components/schemas/Search"
+                        }
+                    }
+                },      
+                
+            "responses": {
+                "200": {
+                    "description": "OK"
+                    },
+                
+                "404": {
+                    "description": "USERNAME NOT FOUND"
+                    }
+            }
+        }
+          
+        },
+
+        "/people":{
+
+            "get":{
+                "tags":["Personas API"],
+                "summary": "Returns a page of people",
+            
+
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Search"
+                            }
+                        }
+                    },      
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                        "$ref": "#/components/schemas/Search"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                        "$ref": "#/components/schemas/Search"
+                        }
+                }
+                
+            }
+        }
+      },
+        "/people/{pages}":{
+
+            "get":{
+                "tags":["Personas API"],
+                "summary": "Returns a specified page of people",
+                "parameters" : [{
+                    "name": "pages",
+                    "in": "path",
+                    "required": "true",
+                    "description": "Page number",
+                    "properties": {
+                        "type": "string",
+                        "minimum": "1"
+                    }
+                }],
+
+                "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/Search"
+                            }
+                        }
+                    },      
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                        "$ref": "#/components/schemas/Search"
+                        }
+                    },
+                    "404": {
+                        "description": "NOT FOUND",
+                        "schema": {
+                        "$ref": "#/components/schemas/Search"
+                        }
+                     }
+                
+
+                }
+         }
+        }
+    
+    
+
+    }
+
+    
+
+}
+
+      
+    
+
+    
+
+
+  
+    
