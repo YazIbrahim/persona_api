@@ -5,11 +5,6 @@ The Persona API is a fake RESTful API that delivers made up data on a few endpoi
 ## Setup
 Requires Python 3
 
-#### Create Virtual Environment
-```
-virtualenv .env
-source ./env/bin/active
-```
 
 #### Install Dependencies
 
