@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 #### Run app
 
-During first run the profile data will be unzipped and loaded into the database.
+During the first run the profile data will be unzipped and loaded into the database.
 ```
 python3 app.py
 ```
