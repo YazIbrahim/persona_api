@@ -1,6 +1,7 @@
 # Persona API
 The Persona API is a fake RESTful API that delivers made up data on a few endpoints.
 
+
 ## Setup
 Requires Python 3
 
@@ -18,6 +19,7 @@ pip install -r requirements.txt
 
 #### Run app
 
+During first run the profile data will be unzipped and loaded into the database.
 ```
 python3 app.py
 ```
@@ -30,5 +32,12 @@ GET    http://127.0.0.1:5000/people/{page}
 GET    http://127.0.0.1:5000/search/{username}
 
 DELETE http://127.0.0.1:5000/search/{username}
+
+
+#### Run Automated Tests for APIs
+
+```
+python3 tests/tests.py
+```
 
 
