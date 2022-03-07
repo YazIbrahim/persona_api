@@ -28,7 +28,6 @@ swagger_blueprint = get_swaggerui_blueprint(
 persona_app.register_blueprint(swagger_blueprint, url_prefix=swagger_url)
 
 
-
 class PersonasModel(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
@@ -62,10 +61,6 @@ class PersonasModel(db.Model):
         self.birthdate = birthdate
         
 
-    
-    
-
-
 class Names(Resource):
     def get(self, username):
         
@@ -77,7 +72,6 @@ class Names(Resource):
                 response = jsonify({"Error": "USERNAME NOT"})
                 response.status_code = 404
                 return response
-
 
         response = jsonify(username_record)
         response.status_code = 200
@@ -95,7 +89,6 @@ class Names(Resource):
             response.status_code = 404
             return response
 
-        
         response = jsonify({"Msg": "Profile deleted"})
         response.status_code = 200
         
@@ -106,8 +99,7 @@ class People(Resource):
     def get(self, pages=1):
 
         total_records = get_all(pages, PersonasModel, db)
-
-
+        
         # Retrun 404 if no record with that username
         if total_records is None:
 
@@ -121,14 +113,8 @@ class People(Resource):
     
         return response
 
-
-   
-
-
 persona_api.add_resource(Names, "/search/<string:username>")
 persona_api.add_resource(People, "/people", "/people/<int:pages>")
-
-
 
 if __name__ == "__main__":
     # Create and  populate the database if it does not exist
@@ -137,6 +123,4 @@ if __name__ == "__main__":
         print("Loading Database")
         populate_db(db, PersonasModel)
        
-    
-
     persona_app.run(debug=False)

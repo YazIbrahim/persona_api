@@ -12,14 +12,11 @@ class apitests(unittest.TestCase):
         
         self.assertEqual(r.status_code, 200)
 
-     
     def test_b_Getpeople(self):
         print('''Test get people returning 10 profiles per page for a specified page''')
 
         r = requests.get("http://127.0.0.1:5000/people/7")
         r_data = json.loads(r.text)
-
-       
 
         self.assertEqual(len(r_data), 10)
         self.assertEqual(r.status_code, 200)

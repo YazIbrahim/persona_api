@@ -29,7 +29,7 @@ def populate_db(db, PersonasModel):
                     i['birthdate'])
 
                 store_profiles.append(user_entry)
-
+                
             db.session.add_all(store_profiles)
             db.session.commit()
 
@@ -47,7 +47,6 @@ def retrieve_user(username, PersonasModel):
     return username_dict
 
 
-
 def delete_person(username, PersonasModel, db):
     '''Deltes profile for a single person based on the username'''
 
@@ -56,7 +55,6 @@ def delete_person(username, PersonasModel, db):
 
     if x  == 0:
         return 404
-    
 
     return None
 
@@ -70,15 +68,10 @@ def get_all(page, PersonasModel, db):
     if total_records is None:
         return None
 
-    
-    
-
     record_list = []
     for r in total_records:
         record = r.__dict__
         del record['_sa_instance_state']
         record_list.append(record)
-
-
 
     return record_list

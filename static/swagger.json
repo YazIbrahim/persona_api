@@ -6,15 +6,12 @@
       "title": "Personas REST API app "
     },
   
-  
-  
    "tags": [
       {
         "name": "Personas API",
         "description": "Test API"
       }
     ],
-
   
     "components": {
 
@@ -108,12 +105,10 @@
                             "schema": {
                             "$ref": "#/components/schemas/Search"
                             }
-                    }
-                    
+                    }              
 
           }
         },
-
 
           "delete":{
             "tags":["Personas API"],
@@ -223,12 +218,8 @@
                 }
          }
         }
-    
-    
 
-    }
-
-    
+    }  
 
 }
 
