@@ -29,7 +29,7 @@ GET    http://127.0.0.1:5000/search/{username}
 DELETE http://127.0.0.1:5000/search/{username}
 
 
-#### Run Automated Tests for APIs
+#### Run Automated Tests for APIs while the server is running
 
 ```
 python3 tests/tests.py
